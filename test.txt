@@ -1,5 +1,5 @@
 added a text file
 second file
 
-update a new feature - here is master branch
+update a new feature - merged new_feature to master branch
 added a branch to delete
