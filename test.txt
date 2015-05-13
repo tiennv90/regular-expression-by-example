@@ -7,3 +7,5 @@ added a branch to delete
 test stash
 
 test merge vs rebase
+
+test merge vs rebase 2
