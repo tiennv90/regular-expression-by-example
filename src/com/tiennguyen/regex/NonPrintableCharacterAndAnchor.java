@@ -1,7 +1,5 @@
 package com.tiennguyen.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * 
@@ -20,12 +18,7 @@ public class NonPrintableCharacterAndAnchor {
 	 */
 	public static void matchBoundaryWords() {
 		
-		String str = "Can you dance CanCan";
-		Pattern pattern = Pattern.compile("\\bCan");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("Can you dance CanCan", "\\bCan");
 		
 	}
 	
@@ -40,12 +33,7 @@ public class NonPrintableCharacterAndAnchor {
 	 */
 	public static void matchBeginningOfString() {
 		
-		String str = "are you feeling alright, Lucy ?";
-		Pattern pattern = Pattern.compile("^[a-z]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("are you feeling alright, Lucy ?", "^[a-z]");
 		
 	}	
 	
@@ -60,12 +48,7 @@ public class NonPrintableCharacterAndAnchor {
 	 */
 	public static void matchEndOfString() {
 		
-		String str = "demo/contact/cfcs/api.cfc";
-		Pattern pattern = Pattern.compile("cfc$");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("demo/contact/cfcs/api.cfc", "cfc$");
 		
 	}	
 	public static void main(String[] args) {

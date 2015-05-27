@@ -1,8 +1,5 @@
 package com.tiennguyen.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * 
  * @author tien.nv
@@ -23,12 +20,7 @@ public class QuantifiersApplication {
 	 */
 	public static void matchWordCharacters() {
 		
-		String str = "say it with <em> style </em> <sad></sad>";
-		Pattern pattern = Pattern.compile("<\\w+>");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("say it with <em> style </em> <sad></sad>", "<\\w+>");
 		
 	}
 	
@@ -44,13 +36,7 @@ public class QuantifiersApplication {
 	 */
 	public static void howToUseQuestionMark() {
 		
-		String str = "Is that a dog? Dogs are cool!";
-		Pattern pattern = Pattern.compile("[Dd]ogs?");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
-		
+		Utils.printResult("Is that a dog? Dogs are cool!", "[Dd]ogs?");
 	}
 	
 	/**
@@ -64,12 +50,7 @@ public class QuantifiersApplication {
 	 */
 	public static void howToUseMatchBetweenNAndM() {
 		
-		String str = "If i was born on 03/01/2009, I'd be 2";
-		Pattern pattern = Pattern.compile("\\d{2,4}");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("If i was born on 03/01/2009, I'd be 2", "\\d{2,4}");
 		
 	}
 	

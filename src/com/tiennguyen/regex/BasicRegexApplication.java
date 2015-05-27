@@ -1,8 +1,5 @@
 package com.tiennguyen.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * 
  * @author tien.nv
@@ -22,12 +19,7 @@ public class BasicRegexApplication {
 	 */
 	public static void setsubtraction() {
 		
-		String str = "here we go 123 ddd";
-		Pattern pattern = Pattern.compile("[a-z&&[^d-f]]");
-		Matcher matcher = pattern.matcher(str );
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("here we go 123 ddd", "[a-z&&[^d-f]]");
 		
 	}		
 	
@@ -43,12 +35,7 @@ public class BasicRegexApplication {
 	 */
 	public static void setInsertion() {
 		
-		String str = "here we go 123 ddd";
-		Pattern pattern = Pattern.compile("[a-z&&[d-f]]");
-		Matcher matcher = pattern.matcher(str );
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("here we go 123 ddd", "[a-z&&[d-f]]");
 		
 	}	
 	
@@ -63,14 +50,7 @@ public class BasicRegexApplication {
 	 * 				
 	 */
 	public static void matchAnythingButNumberAndPeriod() {
-		
-		String str = "$1,223,444.11";
-		Pattern pattern = Pattern.compile("[^0-9.]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
-		
+		Utils.printResult("$1,223,444.11", "[^0-9.]");
 	}		
 	
 	/**
@@ -84,12 +64,7 @@ public class BasicRegexApplication {
 	 */
 	public static void howToUseDash() {
 		
-		String str = "Give me a call - my number is 123-444-331";
-		Pattern pattern = Pattern.compile("[0-9\\-]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("Give me a call - my number is 123-444-331", "[0-9\\-]");
 		
 	}	
 	
@@ -104,13 +79,7 @@ public class BasicRegexApplication {
 	 */
 	public static void matchAnyLowerCaseCharacter() {
 		
-		String str = "I have $9.95. Wow e";
-		Pattern pattern = Pattern.compile("[a-z]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group());
-		}
-		
+		Utils.printResult("I have $9.95. Wow e", "[a-z]");
 	}	
 	
 	/**
@@ -121,12 +90,7 @@ public class BasicRegexApplication {
 	 */
 	public static void matchAnyCharacterButNumber() {
 		
-		String str = "I have $9.95. Wow";
-		Pattern pattern = Pattern.compile("[^0-9]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group());
-		}
+		Utils.printResult("I have $9.95. Wow", "[^0-9]");
 		
 	}	
 
@@ -140,12 +104,7 @@ public class BasicRegexApplication {
 	 */
 	public static void patternToFilterStringFromParagraph() {
 		
-		String str = "I have $9.95. Wow";
-		Pattern pattern = Pattern.compile("\\$9\\.95");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group());
-		}
+		Utils.printResult("I have $9.95. Wow", "\\$9\\.95");
 		
 	}	
 
@@ -159,12 +118,7 @@ public class BasicRegexApplication {
 	 */
 	public static void patternToFilterLowerCaseStringFromParagraph2() {
 		
-		String str = "I like cool words. Zoftig is a cool word.";
-		Pattern pattern = Pattern.compile("word.");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group());
-		}
+		Utils.printResult("I like cool words. Zoftig is a cool word.", "word.");
 		
 	}
 	
@@ -176,12 +130,7 @@ public class BasicRegexApplication {
 	 */
 	public static void patternToFilterLowerCaseStringFromParagraph() {
 		
-		String str = "I like watching benevolent Ben benchpress";
-		Pattern pattern = Pattern.compile("ben");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group());
-		}
+		Utils.printResult("I like watching benevolent Ben benchpress", "ben");
 		
 	}
 	
@@ -190,19 +139,12 @@ public class BasicRegexApplication {
 	 * output: dsn AFG
 	 */
 	public static void patternToFilterInputParamFromTemplate() {
-		
-		String str = "ZZZZL <%= dsn %> AFFF <%= AFG %>";
-		Pattern pattern = Pattern.compile("<%=(.*?)%>");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.println(matcher.group(1));
-		}
-		
+		Utils.printResult("ZZZZL <%= dsn %> AFFF <%= AFG %>", "<%=(.*?)%>");
 	}
 	
 	
 	public static void main(String[] args) {
-		setsubtraction();
+		patternToFilterInputParamFromTemplate();
 	}
 
 }

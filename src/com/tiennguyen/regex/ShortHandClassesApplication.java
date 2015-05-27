@@ -1,8 +1,5 @@
 package com.tiennguyen.regex;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
  * 
  * @author tien.nv
@@ -22,12 +19,7 @@ public class ShortHandClassesApplication {
 	 */
 	public static void matchAnything() {
 		
-		String str = "my number is 999-09-21-1980";
-		Pattern pattern = Pattern.compile("[\\w\\W]");
-		Matcher matcher = pattern.matcher(str );
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("my number is 999-09-21-1980", "[\\w\\W]");
 		
 	}	
 
@@ -42,12 +34,7 @@ public class ShortHandClassesApplication {
 	 */
 	public static void matchDigitCharacter() {
 		
-		String str = "my number is 999-09-21-1980";
-		Pattern pattern = Pattern.compile("\\d\\d-\\d\\d-\\d\\d\\d\\d");
-		Matcher matcher = pattern.matcher(str );
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("my number is 999-09-21-1980", "\\d\\d-\\d\\d-\\d\\d\\d\\d");
 		
 	}
 
@@ -63,18 +50,13 @@ public class ShortHandClassesApplication {
 	 */
 	public static void matchAnythingButNumberAndPeriod() {
 		
-		String str = "$1,223,444.11";
-		Pattern pattern = Pattern.compile("[^\\d.]");
-		Matcher matcher = pattern.matcher(str);
-		while (matcher.find()) {
-			System.out.print(matcher.group());
-		}
+		Utils.printResult("$1,223,444.11", "[^\\d.]");
 		
 	}	
 	
 	
 	public static void main(String[] args) {
-		matchAnything();
+		matchAnythingButNumberAndPeriod();
 	}
 
 }
